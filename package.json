@@ -1,19 +1,19 @@
 {
-  "name": "javascript",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
-  "scripts": {
-    "dev": "sass style.scss style.css -w --no-source-map -s compressed"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pablo-volonte/CoderJS.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pablo-volonte/CoderJS/issues"
-  },
-  "homepage": "https://github.com/pablo-volonte/CoderJS#readme"
+	"name": "javascript",
+	"version": "1.0.0",
+	"description": "",
+	"main": "script.js",
+	"scripts": {
+		"dev": "sass style.scss style.css -w --no-source-map -s compressed"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pablo-volonte/CoderJS.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/pablo-volonte/CoderJS/issues"
+	},
+	"homepage": "https://github.com/pablo-volonte/CoderJS#readme"
 }
