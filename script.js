@@ -1,5 +1,4 @@
 let Verdadero = true;
-
 while (Verdadero) {
 	let nombreUsuario = prompt("Ingrese su Nombre");
 	let apellidoUsuario = prompt("Ahora ingrese su Apellido");
@@ -7,23 +6,7 @@ while (Verdadero) {
 		confirm("¡ATENCION! Ingrese la informacíon Completa");
 	} else {
 		Verdadero = false;
+		let nombreCompleto = nombreUsuario + " " + apellidoUsuario;
+		alert("Felicitaciones" + " " + nombreCompleto + " " + ",Bienvenido");
 	}
 }
-alert("Felicitaciones, Que seas Bienvenido");
-
-// else {
-// 	confirm("Ingresaste" + " " + nombreYapellido + " " + "¿Es correcto?");
-// }
-/*while (verdadero) {
-	
-	if (apellidoUsuario == "") {
-		confirm("¡ATENCION! Ingrese su Nombre");
-	}
-	while (Verdadero) {
-	let apellidoUsuario = prompt("Ahora ingrese su Apellido");
-	if (apellidoUsuario == "") {
-		confirm("¡ATENCION! Ingrese su Nombre");
-	} else {
-		Verdadero = false;
-	}
-}*/
