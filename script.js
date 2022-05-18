@@ -93,11 +93,8 @@ for (let prop in producto1) {
 */
 
 //	OBJETOS				///			OBJETOS			///
-
-/*
-let opcion1 = parseInt(
-	prompt("Ingrese: \n 1 para cargar nuevo producto \n 2 para modificar stock")
-);
+/* 
+let opcion1;
 let opcion2;
 let aux1;
 verdadero = true;
@@ -129,42 +126,45 @@ class Producto {
 	}
 }
 
-
-const producto1 = new Producto(
-	parseInt(prompt("Ingrese nro de Item")),
-	(aux1 = prompt("Ingrese Descripción del producto")),
-	(precio = parseFloat(prompt(`Ingrese el precio de ${aux1}`))) * IVA,
-	parseInt(prompt(`Ingrese la cantidad en stock de ${aux1}`))
-);
-if (opcion1 === 1) {
-} else if (opcion1 === 2) {
-	opcion2 = parseInt(
-		prompt("Ingrese: \n 1 para aumentar stock \n 2 para disminuir stock")
+do {
+	opcion1 = parseInt(
+		prompt(
+			"Ingrese: \n 1 para cargar nuevo producto \n 2 para modificar stock"
+		)
 	);
-	if (opcion2 === 1) {
-		producto1.aumentarStock(
-			parseInt(prompt("Ingrese un valor a aumentar"))
+	if (opcion1 === 1) {
+	} else if (opcion1 === 2) {
+		opcion2 = parseInt(
+			prompt(
+				"Ingrese: \n 1 para aumentar stock \n 2 para disminuir stock"
+			)
 		);
-	} else if (opcion2 === 2) {
-		producto1.disminuirStock(parseInt(prompt("Ingrese valor a disminuir")));
+		if (opcion2 === 1) {
+			producto1.aumentarStock(
+				parseInt(prompt("Ingrese un valor a aumentar"))
+			);
+		} else if (opcion2 === 2) {
+			producto1.disminuirStock(
+				parseInt(prompt("Ingrese valor a disminuir"))
+			);
+		}
 	}
-} else {
-	alert("Ingrese un valor válido");
-}
+
+	const producto1 = new Producto(
+		parseInt(prompt("Ingrese nro de Item")),
+		(aux1 = prompt("Ingrese Descripción del producto")),
+		(precio = parseFloat(prompt(`Ingrese el precio de ${aux1}`))) * IVA,
+		parseInt(prompt(`Ingrese la cantidad en stock de ${aux1}`))
+	);
+} while (alert("Ingrese un valor válido"));
+
 producto1.mostrarProducto();
 producto1.mostrarStock();
  */
-
 //	ARRAY				///			ARRAY			///
 
-let usuario1 = [
-	prompt("Ingrese nombre de usuario 1"),
-	parseInt(prompt("ingrese edad de usuario 1")),
-];
-let usuario2 = [
-	prompt("Ingrese nombre de usuario 2"),
-	parseInt(prompt("ingrese edad de usuario 2")),
-];
+/* let usuario1 = ["Marcelo", "Juan", "Pablo", "Lucas", "Gabriel"];
+let usuario2 = ["Emilce", "Nora", "Maria", "Eugenia"];
 
 console.log(usuario1, usuario2);
 
@@ -172,14 +172,22 @@ usuario2.push("Emi");
 
 console.log(usuario1, usuario2);
 
-usuario1.splice(1, 1);
-console.log(usuario1, usuario2);
-
 let usuariosTotales = usuario1.concat(usuario2);
-console.log(usuariosTotales);
-console.log(usuariosTotales.length);
 
-eliminarNombre = prompt("Escriba nombre a Eliminar");
+console.log(usuariosTotales);
+
+for (let i = 0; i < usuariosTotales.length; i++) {
+	if (usuariosTotales[i] == "Juan" || usuariosTotales[i] == "Maria") {
+		continue; //break
+	}
+	console.log(usuariosTotales[i]);
+	usuariosTotales.splice(i, 0);
+}
+
+console.log(usuariosTotales.join("  "));
+
+let eliminarNombre = prompt(`Escriba nombre a Eliminar: \n${usuariosTotales}`);
+
 let indice = usuariosTotales.indexOf(eliminarNombre);
 
 if (indice != -1) {
@@ -188,4 +196,34 @@ if (indice != -1) {
 } else {
 	alert("Inserte un nombre válido");
 }
-console.log(usuariosTotales);
+
+console.log(usuariosTotales.join("  "));
+ */
+
+//		EVENTOS				EVENTOS					EVENTOS
+
+let inputProducto = document.getElementById("inputProducto");
+
+inputProducto.addEventListener("input", () => {
+	let buscador = inputProducto.value;
+	console.log(
+		productos.filter((producto) =>
+			producto.productos.includes(buscador.toLowerCase())
+		)
+	);
+});
+
+class Producto {
+	constructor(productos, precio, stock) {
+		this.productos = productos;
+		this.precio = precio;
+		this.stock = stock;
+	}
+}
+
+const productoA = new Producto("Martillo", 138, 10);
+const productoB = new Producto("Pinza", 250, 10);
+const productoC = new Producto("Tornillo", 1, 10);
+const productoD = new Producto("Tuerca", 2, 10);
+
+let productos = [productoA, productoB, productoC, productoD];
