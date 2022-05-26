@@ -93,7 +93,7 @@ for (let prop in producto1) {
 */
 
 //	OBJETOS				///			OBJETOS			///
-/* 
+/*
 let opcion1;
 let opcion2;
 let aux1;
@@ -201,7 +201,7 @@ console.log(usuariosTotales.join("  "));
  */
 
 //		EVENTOS				EVENTOS					EVENTOS
-
+/*
 let inputProducto = document.getElementById("inputProducto");
 
 inputProducto.addEventListener("input", () => {
@@ -226,4 +226,28 @@ const productoB = new Producto("Pinza", 250, 10);
 const productoC = new Producto("Tornillo", 1, 10);
 const productoD = new Producto("Tuerca", 2, 10);
 
-let productos = [productoA, productoB, productoC, productoD];
+let productos = [productoA, productoB, productoC, productoD]; */
+
+//			LIBRERIAS			LIBRERIAS				LIBRERIAS 		//
+let botonMayor = document.querySelector(`#botonMayor`);
+let botonMenor = document.querySelector("#botonMenor");
+
+botonMayor.addEventListener(`click`, () => {
+	Swal.fire({
+		position: "top-center",
+		icon: "success",
+		title: "Excelente, podes acceder a comprar Bebidas",
+		showConfirmButton: false,
+		timer: 2500,
+	});
+});
+
+botonMenor.addEventListener(`click`, () => {
+	Swal.fire({
+		position: "top-center",
+		icon: "warning",
+		title: "Lo sentimos, no tienes edad para ingresar",
+		showConfirmButton: false,
+		timer: 1500,
+	});
+});
