@@ -258,22 +258,22 @@ botonMenor.addEventListener(`click`, () => {
 let formularioBusqueda = document.querySelector("#formularioBusqueda");
 let resultadoBusqueda = document.querySelector("#resultadoBusqueda");
 let inputCiudad = document.querySelector("#inputCiudad");
+
 const buscarPorCiudad = (ciudad) => {
 	fetch(
-		`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=fa8e45e68646cceebc7e17c2e17f398c&units=metric&lang=sp`
+		`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&lang=es&appid=fa8e45e68646cceebc7e17c2e17f398c`
 	)
 		.then((response) => response.json())
 		.then((data) => {
-			resultadoBusqueda.innerHTML = `<div>
+			resultadoBusqueda.innerHTML = `
 		<h2>Datos del Tiempo</h2>
-<p>Localidad: ${data.name}</p>
-<p>Temperatura Actual: ${data.main.temp} ºC</p>
-<p>Temperatura Máxima: ${data.main.temp_max} ºC</p>
-<p>Temperatura Mínima: ${data.main.temp_min} ºC</p>
-<p>Humedad Actual: ${data.main.humidity} %</p>
-<p>Sensación Térmica: ${data.main.feels_like} ºC</p>
-<p>Visibilidad:${data.visibility / 1000} Km</p>
-</div>
+<p><span>Localidad:</span>	 ${data.name} - ${data.sys.country}</p>
+<p><span>Temperatura Actual:</span> ${data.main.temp} ºC</p>
+<p><span>Temperatura Máxima:</span> ${data.main.temp_max} ºC</p>
+<p><span>Temperatura Mínima:</span> ${data.main.temp_min} ºC</p>
+<p><span>Sensación Térmica:</span> ${data.main.feels_like} ºC</p>
+<p><span>Humedad Actual:</span> ${data.main.humidity} %</p>
+<p><span>Visibilidad:</span> ${data.visibility / 1000} Km</p>
 
 `;
 		});

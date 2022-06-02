@@ -1,8 +1,13 @@
-h1 {
-	color: green;
+h2 {
+	color: rgb(38, 167, 247);
+	text-decoration: underline;
 }
 h3 {
 	background-color: blue;
+}
+p span {
+	color: rgb(242, 125, 8);
+	font-weight: bold;
 }
 
 button {
