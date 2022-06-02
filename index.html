@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="./style.css" />
-		<link rel="stylesheet" href="sweetalert2.min.css" />
+		<!-- 		<link rel="stylesheet" href="sweetalert2.min.css" />
+ -->
 	</head>
-	<input type="text" placeholder="Escriba un Producto" id="inputProducto" />
+	<body>
+		<!-- <input type="text" placeholder="Escriba un Producto" id="inputProducto" /> -->
 
-	<button type="button" id="botonMayor">Soy Mayor de 18 años</button>
+		<form id="formularioBusqueda">
+			<input
+				type="text"
+				placeholder="Escriba una Ciudad"
+				id="inputCiudad"
+			/>
+			<button>BUSCAR</button>
+		</form>
+
+		<div id="resultadoBusqueda"></div>
+
+		<!-- 	<button type="button" id="botonMayor">Soy Mayor de 18 años</button>
 	<button type="button" id="botonMenor">Soy Menor 18 años</button>
 
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="./script.js"></script>
-	<body></body>
+ -->
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="./script.js"></script>
+	</body>
 </html>

@@ -229,7 +229,7 @@ const productoD = new Producto("Tuerca", 2, 10);
 let productos = [productoA, productoB, productoC, productoD]; */
 
 //			LIBRERIAS			LIBRERIAS				LIBRERIAS 		//
-let botonMayor = document.querySelector(`#botonMayor`);
+/* let botonMayor = document.querySelector(`#botonMayor`);
 let botonMenor = document.querySelector("#botonMenor");
 
 botonMayor.addEventListener(`click`, () => {
@@ -251,3 +251,40 @@ botonMenor.addEventListener(`click`, () => {
 		timer: 1500,
 	});
 });
+ */
+
+//		FETCH				FETCH					FETCH   		//
+
+let formularioBusqueda = document.querySelector("#formularioBusqueda");
+let resultadoBusqueda = document.querySelector("#resultadoBusqueda");
+let inputCiudad = document.querySelector("#inputCiudad");
+const buscarPorCiudad = (ciudad) => {
+	fetch(
+		`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=fa8e45e68646cceebc7e17c2e17f398c&units=metric&lang=sp`
+	)
+		.then((response) => response.json())
+		.then((data) => {
+			resultadoBusqueda.innerHTML = `<div>
+		<h2>Datos del Tiempo</h2>
+<p>Localidad: ${data.name}</p>
+<p>Temperatura Actual: ${data.main.temp} ºC</p>
+<p>Temperatura Máxima: ${data.main.temp_max} ºC</p>
+<p>Temperatura Mínima: ${data.main.temp_min} ºC</p>
+<p>Humedad Actual: ${data.main.humidity} %</p>
+<p>Sensación Térmica: ${data.main.feels_like} ºC</p>
+<p>Visibilidad:${data.visibility / 1000} Km</p>
+</div>
+
+`;
+		});
+};
+
+const inputBusqueda = () => {
+	formularioBusqueda.addEventListener("submit", (e) => {
+		e.preventDefault();
+		buscarPorCiudad(inputCiudad.value);
+	});
+};
+
+inputBusqueda();
+buscarPorCiudad();
